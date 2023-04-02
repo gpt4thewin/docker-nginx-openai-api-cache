@@ -1,0 +1,10 @@
+version: '3'
+services:
+  openai-cache-proxy:
+    image: nginx:latest
+    container_name: openai-cache-proxy
+    ports:
+      - 127.0.0.1:81:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./server_cache:/server_cache:rw
