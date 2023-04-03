@@ -21,26 +21,26 @@ This project is a simple Docker Nginx project that serves as a cache for the Ope
 1. Clone the repository:
 
 ```
-$ git clone https://github.com/juliencsharp/docker-nginx-openai-api-cache.git
-$ cd docker-nginx-openai-api-cache
+git clone https://github.com/juliencsharp/docker-nginx-openai-api-cache.git
+cd docker-nginx-openai-api-cache
 ```
 
-3. Build and start the container:
+3. Start the container:
 
 ```
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 4. Follow the logs
 
 ```
-$ docker-compose logs -f
+docker-compose logs -f
 ```
 
 5. Stop the container:
 
 ```
-$ docker-compose down
+docker-compose down
 ```
 
 ### Usage
