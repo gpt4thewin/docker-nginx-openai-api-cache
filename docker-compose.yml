@@ -1,7 +1,7 @@
 version: '3'
 services:
   openai-cache-proxy:
-    image: nginx:latest
+    image: nginx:1.23.4
     container_name: openai-cache-proxy
     ports:
       - 127.0.0.1:81:80
