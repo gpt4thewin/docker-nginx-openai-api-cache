@@ -49,11 +49,11 @@ Set your client's API server address to `http://localhost:81/v1`
 Once the containers are running, you can use the OpenAI API through the cache by sending requests to the supported URIs.
 
 URIs that are supported will be forwarded, unless they are cached. 
-URIs that are not supported will be forwarded regularly.
+URIs that are not supported will be forwarded normally.
 
 ### Configuration
 
-The cache is configured using the `nginx.conf` file located in the `nginx` directory. You can modify this file to change the cache settings or add additional URIs.
+The cache is configured using the `nginx.conf`. You can modify this file to change the cache settings or add additional URIs.
 
 ## Contributing
 
