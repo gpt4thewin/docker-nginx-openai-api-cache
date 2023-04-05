@@ -21,7 +21,7 @@ This project is a simple Docker Nginx project that serves as a cache for the Ope
 1. Clone the repository:
 
 ```
-git clone https://github.com/juliencsharp/docker-nginx-openai-api-cache.git
+git clone https://github.com/gpt4thewin/docker-nginx-openai-api-cache.git
 cd docker-nginx-openai-api-cache
 ```
 
