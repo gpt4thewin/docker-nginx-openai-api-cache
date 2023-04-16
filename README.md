@@ -1,6 +1,6 @@
 # Docker Nginx OpenAI API Cache Reverse proxy
 
-This project is a simple Docker Nginx project that serves as a cache for the OpenAI API. It will cache response of the following URIs: 
+This project is a simple Docker Nginx project that serves as a cache for the OpenAI API. It will cache response of the following endpoints:
 
 - POST /v1/chat/completions
 - POST /v1/completions
@@ -8,6 +8,15 @@ This project is a simple Docker Nginx project that serves as a cache for the Ope
 - POST /v1/embeddings
 - POST /v1/moderations
 - POST /v1/answers
+
+Will also cache the following endpoints (deprecated by OpenAI):
+
+- POST /v1/engines/*/chat/completions
+- POST /v1/engines/*/completions
+- POST /v1/engines/*/edits
+- POST /v1/engines/*/embeddings
+- POST /v1/engines/*/moderations
+- POST /v1/engines/*/answers
 
 ## Getting Started
 
