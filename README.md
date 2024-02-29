@@ -44,16 +44,50 @@ git clone https://github.com/gpt4thewin/docker-nginx-openai-api-cache.git
 cd docker-nginx-openai-api-cache
 ```
 
-3. Start the container:
+2. Start the container:
 
 ```
 docker-compose up -d
 ```
 
-4. Follow the logs
+3. Test the server
+
+Set your credentials:
+```
+OPENAI_API_KEY="...."
+```
+
+Run this 2 times or more:
+```
+curl -s -o /dev/null -w "%{http_code}" http://localhost:81/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello there !"
+    }
+  ],
+  "temperature": 0,
+  "max_tokens": 228,
+  "top_p": 1,
+  "frequency_penalty": 0,
+  "presence_penalty": 0
+}'
+```
+
+4. Check the logs
 
 ```
-docker-compose logs -f
+docker-compose logs
+```
+
+The last lines should show something like this
+```
+openai-cache-proxy  | 172.28.0.1 - - [29/Feb/2024:19:59:49 +0000] "POST /v1/chat/completions HTTP/1.1" 200 494 "-" "curl/7.80.0" Cache: MISS
+openai-cache-proxy  | 172.28.0.1 - - [29/Feb/2024:19:59:52 +0000] "POST /v1/chat/completions HTTP/1.1" 200 494 "-" "curl/7.80.0" Cache: HIT
 ```
 
 5. Stop the container:
