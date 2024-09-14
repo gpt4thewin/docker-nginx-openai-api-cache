@@ -8,25 +8,20 @@ nginx here is preconfigured to work on OpenAI API.
 
 - **Works with any client** that allows you to configure the server address (as it acts as a reverse proxy)
 - Caches the response of the support endpoints. The key of cache is built from the request uri and body
+- Caches the response for the POST requests only
+- Use multiple LLM providers
 - Returns an "X-Cache-Status" header indicating whether the response was served from cache or not
 
 ### Supported endpoints:
 
-- POST /v1/chat/completions
-- POST /v1/completions
-- POST /v1/edits
-- POST /v1/embeddings
-- POST /v1/moderations
-- POST /v1/answers
-
-*endpoints deprecated by OpenAI :*
-
-- POST /v1/engines/*/chat/completions
-- POST /v1/engines/*/completions
-- POST /v1/engines/*/edits
-- POST /v1/engines/*/embeddings
-- POST /v1/engines/*/moderations
-- POST /v1/engines/*/answers
+- POST /v1/* (default)
+- POST /openai/* (openai)
+- POST /openrouter/* (openrouter)
+- POST /anthropic/* (anthropic)
+- POST /groq/* (groq)
+- POST /mistral/* (mistral)
+- POST /cohere/* (cohere)
+- POST /ai21/* (ai21)
 
 ## Getting Started
 
@@ -52,7 +47,7 @@ docker-compose up -d
 
 3. Test the server
 
-Set your credentials:
+Setup your credentials:
 ```
 OPENAI_API_KEY="...."
 ```
