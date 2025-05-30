@@ -58,7 +58,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost:81/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -d '{
-  "model": "gpt-3.5-turbo",
+  "model": "gpt-4.1-nano",
   "messages": [
     {
       "role": "user",
