@@ -1,3 +1,5 @@
+
+
 # LLM API Cache Reverse proxy
 
 This project is a simple Docker Nginx project that serves as a cache for the OpenAI API.
@@ -101,7 +103,7 @@ URIs that are not supported will be forwarded normally.
 
 ### Configuration
 
-The cache is configured using the `nginx.conf`. You can modify this file to change the cache settings or add additional URIs.
+The cache is configured using the `nginx.conf` and `cache.conf` files. You can modify these files to change the cache settings or add additional URIs.
 
 ## Contributing
 
